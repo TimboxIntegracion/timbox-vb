@@ -107,6 +107,6 @@ End Function
 Private Sub Class_Initialize()
     strWSDLUrl = "https://staging.ws.timbox.com.mx/timbrado/action"
     strUserName = "IAD121214B34"
-    strPassword = "gWgsRb4ixU_xUQRi6H7H"
+    strPassword = "usar el password que se asigno"
 End Sub
 
