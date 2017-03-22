@@ -33,6 +33,14 @@ Begin VB.Form Form1
       Top             =   120
       Width           =   1335
    End
+   Begin VB.Label Label1 
+      Caption         =   "UUID a Cancelar:"
+      Height          =   255
+      Left            =   360
+      TabIndex        =   3
+      Top             =   1200
+      Width           =   2415
+   End
 End
 Attribute VB_Name = "Form1"
 Attribute VB_GlobalNameSpace = False

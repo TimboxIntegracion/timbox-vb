@@ -60,7 +60,6 @@ Public Function Cancelar(ByVal UUID As String, ByVal RFC As String, ByVal pfxBas
     ' Llamar al servicio de timbox en el action cancelar_cfdi, con el envelope formado
     Cancelar = PostWebservice("cancelar_cfdi", strEnvelope)
     
-    
 End Function
 
 Public Function PostWebservice(ByVal SoapAction As String, ByVal XmlBody As String) As String
@@ -108,6 +107,6 @@ End Function
 Private Sub Class_Initialize()
     strWSDLUrl = "https://staging.ws.timbox.com.mx/timbrado/action"
     strUserName = "IAD121214B34"
-    strPassword = "usar password"
+    strPassword = "gWgsRb4ixU_xUQRi6H7H"
 End Sub
 
