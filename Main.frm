@@ -42,18 +42,11 @@ Attribute VB_Exposed = False
 
 Private Sub BtnCancelar_Click()
     Dim doc As New MSXML2.DOMDocument
-    Dim strResponse As String
-    Dim strUrl As String
-    Dim strEnvelope As String
-    Dim username As String
-    Dim password As String
     Dim strRFC As String
     Dim pfxBase64 As String
     Dim pfxPassword As String
     
     ' Parametros para cancelar
-    username = "IAD121214B34"
-    password = "gWgsRb4ixU_xUQRi6H7H"
     strRFC = "AAA010101AAA"
     pfxBase64 = ""
     pfxBase64 = pfxBase64 & "MIIIWQIBAzCCCB8GCSqGSIb3DQEHAaCCCBAEgggMMIIICDCCBQcGCSqGSIb3DQEHBqCCBPgwggT0AgEAMIIE7QYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYw"
@@ -82,46 +75,20 @@ Private Sub BtnCancelar_Click()
     pfxBase64 = pfxBase64 & "n0elLuqWflzq+6wFt5OhOMoDyKIwMTAhMAkGBSsOAwIaBQAEFGcEN6bOyqHAA92f6Ov6gu6ARzEABAjqgtqLbPJ4/QICCAA="
     
     pfxPassword = "12345678a"
-    
-    strUrl = "https://staging.ws.timbox.com.mx/timbrado/action"
-    
-    ' Cuerpo de la peticion de cancelacion
-    strEnvelope = ""
-    strEnvelope = strEnvelope & "<soapenv:Envelope xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:urn=""urn:WashOut"">"
-    strEnvelope = strEnvelope & "<soapenv:Header/>"
-    strEnvelope = strEnvelope & "<soapenv:Body>"
-    strEnvelope = strEnvelope & "<urn:cancelar_cfdi soapenv:encodingStyle=""http://schemas.xmlsoap.org/soap/encoding/"">"
-    strEnvelope = strEnvelope & "<username xsi:type=""xsd:string"">" & username & "</username>"
-    strEnvelope = strEnvelope & "<password xsi:type=""xsd:string"">" & password & "</password>"
-    strEnvelope = strEnvelope & "<rfcemisor xsi:type=""xsd:string"">" & strRFC & "</rfcemisor>"
-    strEnvelope = strEnvelope & "<uuids xsi:type=""urn:uuids"">"
-    strEnvelope = strEnvelope & "<uuid xsi:type=""xsd:string"">" & txtUUID.Text & "</uuid>"
-    strEnvelope = strEnvelope & "</uuids>"
-    strEnvelope = strEnvelope & "<pfxbase64 xsi:type=""xsd:string"">" & pfxBase64 & "</pfxbase64>"
-    strEnvelope = strEnvelope & "<pfxpassword xsi:type=""xsd:string"">" & pfxPassword & "</pfxpassword>"
-    strEnvelope = strEnvelope & "</urn:cancelar_cfdi>"
-    strEnvelope = strEnvelope & "</soapenv:Body>"
-    strEnvelope = strEnvelope & "</soapenv:Envelope>"
-    
-    ' Llamar PostWebservice e Imprimir el Resultado
-    strResponse = PostWebservice(strUrl, "cancelar_cfdi", strEnvelope)
-    doc.LoadXml strResponse
+
+    ' Llamar la funcion cancelar
+    Dim cRequest   As cServicios
+    Set cRequest = New cServicios
+    doc.LoadXml cRequest.Cancelar(txtUUID.Text, strRFC, pfxBase64, pfxPassword)
     Debug.Print doc.Text
 
 End Sub
 
 Private Sub BtnTimbrar_Click()
     Dim doc As New MSXML2.DOMDocument
-    Dim strResponse As String
-    Dim strUrl As String
-    Dim strEnvelope As String
-    Dim username As String
-    Dim password As String
     Dim strXml As String
     
-    ' Parametros para mandar timbrar
-    username = "IAD121214B34"
-    password = "gWgsRb4ixU_xUQRi6H7H"
+    ' Enviar el XML en formato base64
     strXml = ""
     strXml = strXml & "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGNmZGk6Q29tcHJvYmFudGUgeG1sbnM6Y2ZkaT0iaHR0cDovL3d3dy5zYXQuZ29iLm14"
     strXml = strXml & "L2NmZC8zIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiBMdWdhckV4cGVkaWNpb249Ik3DqXhpY28iIGNl"
@@ -155,68 +122,10 @@ Private Sub BtnTimbrar_Click()
     strXml = strXml & "aW1wb3J0ZT0iMC4xNiIgaW1wdWVzdG89IklWQSIgdGFzYT0iMTYuMDAiLz4KICAgIDwvY2ZkaTpUcmFzbGFkb3M+CiAgPC9jZmRpOkltcHVlc3Rvcz4KPC9j"
     strXml = strXml & "ZmRpOkNvbXByb2JhbnRlPgo="
 
-    
-    strUrl = "https://staging.ws.timbox.com.mx/timbrado/action"
-    
-    ' Cuerpo de la peticion de timbrar
-    strEnvelope = ""
-    strEnvelope = strEnvelope & "<soapenv:Envelope xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:urn=""urn:WashOut"">"
-    strEnvelope = strEnvelope & "<soapenv:Header/>"
-    strEnvelope = strEnvelope & "<soapenv:Body>"
-    strEnvelope = strEnvelope & "<urn:timbrar_cfdi soapenv:encodingStyle=""http://schemas.xmlsoap.org/soap/encoding/"">"
-    strEnvelope = strEnvelope & "<username xsi:type=""xsd:string"">" & username & "</username>"
-    strEnvelope = strEnvelope & "<password xsi:type=""xsd:string"">" & password & "</password>"
-    strEnvelope = strEnvelope & "<sxml xsi:type=""xsd:string"">" & Xml & "</sxml>"
-    strEnvelope = strEnvelope & "</urn:timbrar_cfdi>"
-    strEnvelope = strEnvelope & "</soapenv:Body>"
-    strEnvelope = strEnvelope & "</soapenv:Envelope>"
-    
-    ' Call PostWebservice and put result in text box
-    strResponse = PostWebservice(strUrl, "timbrar_cfdi", strEnvelope)
-    doc.LoadXml strResponse
+    ' Llamar la funcion timbrar
+    Dim cRequest   As cServicios
+    Set cRequest = New cServicios
+    doc.LoadXml cRequest.Timbrar(strXml)
     Debug.Print doc.Text
-
 End Sub
 
-
-Private Function PostWebservice(ByVal WSDLURL As String, ByVal SoapAction As String, ByVal XmlBody As String) As String
-    Dim objDom As Object
-    Dim objXmlHttp As Object
-    Dim strRet As String
-    Dim intPos1 As Integer
-    Dim intPos2 As Integer
-    
-    On Error GoTo Err_PW
-    
-    ' Create objects to DOMDocument and XMLHTTP
-    Set objDom = CreateObject("MSXML2.DOMDocument")
-    Set objXmlHttp = CreateObject("MSXML2.XMLHTTP")
-    
-    ' Load XML
-    objDom.async = False
-    objDom.LoadXml XmlBody
-
-    ' Open the webservice
-    objXmlHttp.open "POST", WSDLURL, False
-    
-    ' Create headings
-    objXmlHttp.setRequestHeader "Content-Type", "text/xml; charset=utf-8"
-    objXmlHttp.setRequestHeader "SOAPAction", SoapAction
-    
-    ' Send XML command
-    objXmlHttp.send objDom.Xml
-
-    ' Get all response text from webservice
-    strRet = objXmlHttp.responseText
-    
-    ' Close object
-    Set objXmlHttp = Nothing
-    
-    ' Return result
-    PostWebservice = strRet
-    
-Exit Function
-Err_PW:
-    PostWebservice = "Error: " & Err.Number & " - " & Err.Description
-
-End Function
