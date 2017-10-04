@@ -105,7 +105,7 @@ Err_PW:
 End Function
 
 Private Sub Class_Initialize()
-    strWSDLUrl = "https://staging.ws.timbox.com.mx/timbrado/action"
+    strWSDLUrl = "https://staging.ws.timbox.com.mx/timbrado_cfdi33/action"
     strUserName = "IAD121214B34"
     strPassword = "usar el password que se asigno"
 End Sub
