@@ -95,45 +95,23 @@ End Sub
 Private Sub BtnTimbrar_Click()
     Dim doc As New MSXML2.DOMDocument
     Dim strXml As String
-    
+    Dim encodedXml As String
+    strXml1 = FileToString("ejemplo.xml")
+    encodedXml = Base64EncodeString(strXml1)
     ' Enviar el XML en formato base64
-    strXml = ""
-    strXml = strXml & "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGNmZGk6Q29tcHJvYmFudGUgeG1sbnM6Y2ZkaT0iaHR0cDovL3d3dy5zYXQuZ29iLm14"
-    strXml = strXml & "L2NmZC8zIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiBMdWdhckV4cGVkaWNpb249Ik3DqXhpY28iIGNl"
-    strXml = strXml & "cnRpZmljYWRvPSJNSUlFWVRDQ0EwbWdBd0lCQWdJVU1qQXdNREV3TURBd01EQXlNREF3TURFME1qZ3dEUVlKS29aSWh2Y05BUUVGQlFBd2dnRmNNUm93R0FZ"
-    strXml = strXml & "RFZRUUREQkZCTGtNdUlESWdaR1VnY0hKMVpXSmhjekV2TUMwR0ExVUVDZ3dtVTJWeWRtbGphVzhnWkdVZ1FXUnRhVzVwYzNSeVlXTnB3N051SUZSeWFXSjFk"
-    strXml = strXml & "R0Z5YVdFeE9EQTJCZ05WQkFzTUwwRmtiV2x1YVhOMGNtRmphY096YmlCa1pTQlRaV2QxY21sa1lXUWdaR1VnYkdFZ1NXNW1iM0p0WVdOcHc3TnVNU2t3SndZ"
-    strXml = strXml & "SktvWklodmNOQVFrQkZocGhjMmx6Ym1WMFFIQnlkV1ZpWVhNdWMyRjBMbWR2WWk1dGVERW1NQ1FHQTFVRUNRd2RRWFl1SUVocFpHRnNaMjhnTnpjc0lFTnZi"
-    strXml = strXml & "QzRnUjNWbGNuSmxjbTh4RGpBTUJnTlZCQkVNQlRBMk16QXdNUXN3Q1FZRFZRUUdFd0pOV0RFWk1CY0dBMVVFQ0F3UVJHbHpkSEpwZEc4Z1JtVmtaWEpoYkRF"
-    strXml = strXml & "U01CQUdBMVVFQnd3SlEyOTViMkZqdzZGdU1UUXdNZ1lKS29aSWh2Y05BUWtDRENWU1pYTndiMjV6WVdKc1pUb2dRWEpoWTJWc2FTQkhZVzVrWVhKaElFSmhk"
-    strXml = strXml & "WFJwYzNSaE1CNFhEVEV6TURVd056RTJNREV5T1ZvWERURTNNRFV3TnpFMk1ERXlPVm93Z2RzeEtUQW5CZ05WQkFNVElFRkRRMFZOSUZORlVsWkpRMGxQVXlC"
-    strXml = strXml & "RlRWQlNSVk5CVWtsQlRFVlRJRk5ETVNrd0p3WURWUVFwRXlCQlEwTkZUU0JUUlZKV1NVTkpUMU1nUlUxUVVrVlRRVkpKUVV4RlV5QlRRekVwTUNjR0ExVUVD"
-    strXml = strXml & "aE1nUVVORFJVMGdVMFZTVmtsRFNVOVRJRVZOVUZKRlUwRlNTVUZNUlZNZ1UwTXhKVEFqQmdOVkJDMFRIRUZCUVRBeE1ERXdNVUZCUVNBdklFaEZSMVEzTmpF"
-    strXml = strXml & "d01ETTBVekl4SGpBY0JnTlZCQVVURlNBdklFaEZSMVEzTmpFd01ETk5SRVpPVTFJd09ERVJNQThHQTFVRUN4TUljSEp2WkhWamRHOHdnWjh3RFFZSktvWklo"
-    strXml = strXml & "dmNOQVFFQkJRQURnWTBBTUlHSkFvR0JBS1MvYmVVVnk2RTNhT0RhTnVMZDJTM1BYYVFyZTB0R3htWVRlVXhhNTV4MnQvNzkxOXR0Z09wS0Y2aFBGNUt2bFlo"
-    strXml = strXml & "NHp0cVFxUDR5RVYrSGpIN3l5LzJkLytlN3QrSjYxalRyYmRMcVQzV0QwK3M1ZkNMNkpPckY0aHF5Ly9FR2RmdllmdGRHUk5yWkgrZEFqV1dtbDJTL2hyTjlh"
-    strXml = strXml & "VXhyYVM1cXFPMWI3YnRsQWdNQkFBR2pIVEFiTUF3R0ExVWRFd0VCL3dRQ01BQXdDd1lEVlIwUEJBUURBZ2JBTUEwR0NTcUdTSWIzRFFFQkJRVUFBNElCQVFB"
-    strXml = strXml & "Q1BYQVdaWDJEdUtpWlZ2MzVSUzFXRktnVDJ1YlVPOUMrYnlmWmFwVjZaellOT2lBNEttcGtxSFUvYmtaSHFLalIrUjU5aG9ZaFZkbitDbFVJbGlaZjJDaEho"
-    strXml = strXml & "OHMwYTB2QlJOSjNJSGZBMWFrV2R6b2NZWkxYanozbTBFcjMxQlkrdVMzcVdVdFBzT05HVkR5Wkw2SVVCQlVsRm9lY1FoUDlBTzM5ZXI4ekliZVUyYjBNTUJK"
-    strXml = strXml & "eEN0NHZiREtGdlQ5aTNWMFB1b28ra21ta2YxNUQyckJHUitkcmQ4SDhZZzhUREdGS2YyekttUnNnVDduSWVvdTZXcGZZcDU3MFdJdkxKUVkrZnNNcDMzNEQw"
-    strXml = strXml & "NVVwNXlrWVNBeFVHYTMwUmRVekE0cnhONWhUK1c5d2hXVkdEODhURDMzTnc1NXVOUlVjUk8zWlVWSG1kV1JHK0dqaGxmc0QiIGZlY2hhPSIyMDE3LTAzLTIx"
-    strXml = strXml & "VDE1OjUxOjMyIiBmb3JtYURlUGFnbz0iUGFnbyBlbiB1bmEgc29sYSBleGhpYmljaW9uIiBtZXRvZG9EZVBhZ289InRhcmpldGEgZGUgY3JlZGl0byBvIGRl"
-    strXml = strXml & "Yml0byIgbm9DZXJ0aWZpY2Fkbz0iMjAwMDEwMDAwMDAyMDAwMDE0MjgiIHNlbGxvPSJrQUE5VlRRQUZvMTZIbks5d2l4djlZeE9pNngwSG1UUFlEMURMVkpa"
-    strXml = strXml & "NE41QVFOUVRvNG0yL2VSVitOb25yN1pQdFF6VXRMZVcrWlJaSFRDRExqZ05OcTBYYjQwMVFUYWJ5ZDAvdDdGQ0IzTCtKRVprM0c0RjFIbE84endxK1F2Slhw"
-    strXml = strXml & "UFYvNjhrQ3BjNGFQb2tHdnBNbElrcnVrcUpxendYQWRtY3lLdzlXMEE9IiBzdWJUb3RhbD0iMS4wMCIgdGlwb0RlQ29tcHJvYmFudGU9ImluZ3Jlc28iIHRv"
-    strXml = strXml & "dGFsPSIxLjE2IiB2ZXJzaW9uPSIzLjIiIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3dy5zYXQuZ29iLm14L2NmZC8zIGh0dHA6Ly93d3cuc2F0Lmdv"
-    strXml = strXml & "Yi5teC9zaXRpb19pbnRlcm5ldC9jZmQvMy9jZmR2MzIueHNkIj4KICA8Y2ZkaTpFbWlzb3IgcmZjPSJBQUEwMTAxMDFBQUEiPgogICAgPGNmZGk6UmVnaW1l"
-    strXml = strXml & "bkZpc2NhbCBSZWdpbWVuPSJSZWdpbWVuIEdlbmVyYWwgZGUgTGV5IFBlcnNvbmFzIE1vcmFsZXMgZGUgUHJ1ZWJhIi8+CiAgPC9jZmRpOkVtaXNvcj4KICA8"
-    strXml = strXml & "Y2ZkaTpSZWNlcHRvciByZmM9IkFBRDk5MDgxNEJQNyIvPgogIDxjZmRpOkNvbmNlcHRvcz4KICAgIDxjZmRpOkNvbmNlcHRvIGNhbnRpZGFkPSIxIiBkZXNj"
-    strXml = strXml & "cmlwY2lvbj0iT3JvIMOhw6nDrcOzw7ogw7Egw4HDicONw5PDmiDDkSIgaW1wb3J0ZT0iMS4wMCIgdW5pZGFkPSJObyBBcGxpY2EiIHZhbG9yVW5pdGFyaW89"
-    strXml = strXml & "IjEuMDAiLz4KICA8L2NmZGk6Q29uY2VwdG9zPgogIDxjZmRpOkltcHVlc3Rvcz4KICAgIDxjZmRpOlRyYXNsYWRvcz4KICAgICAgPGNmZGk6VHJhc2xhZG8g"
-    strXml = strXml & "aW1wb3J0ZT0iMC4xNiIgaW1wdWVzdG89IklWQSIgdGFzYT0iMTYuMDAiLz4KICAgIDwvY2ZkaTpUcmFzbGFkb3M+CiAgPC9jZmRpOkltcHVlc3Rvcz4KPC9j"
-    strXml = strXml & "ZmRpOkNvbXByb2JhbnRlPgo="
+    
 
     ' Llamar la funcion timbrar
     Dim cRequest   As cServicios
     Set cRequest = New cServicios
-    doc.LoadXml cRequest.Timbrar(strXml)
+    doc.LoadXml cRequest.Timbrar(encodedXml)
     Debug.Print doc.Text
 End Sub
+
+Function FileToString(strFilename As String) As String
+  iFile = FreeFile
+  Open strFilename For Input As #iFile
+    FileToString = StrConv(InputB(LOF(iFile), iFile), vbUnicode)
+  Close #iFile
+End Function
 
