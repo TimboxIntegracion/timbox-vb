@@ -18,4 +18,4 @@ Se debe tener la libreria MSXML instalada para poder hacer la peticion con este 
 - [MSXML](https://www.microsoft.com/en-US/download/details.aspx?id=3988)
 
 Una vez instalada, se debe agregar a las referencias del proyecto
-![referencias](https://imgur.com/TrSRCIK)
+![referencias](https://imgur.com/TrSRCIK.png)
