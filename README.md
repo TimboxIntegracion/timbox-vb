@@ -14,4 +14,8 @@ Para hacer el POST con el envelope construido, se usa la URL:
 
 En la clase cServicios.cls estan los ejemplos para construir la petión de timbrado asi como la de cancelación.
 
+Se debe tener la libreria MSXML instalada para poder hacer la peticion con este ejemplo:
+- [MSXML](https://www.microsoft.com/en-US/download/details.aspx?id=3988)
 
+Una vez instalada, se debe agregar a las referencias del proyecto
+![referencias](https://imgur.com/TrSRCIK)
