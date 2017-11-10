@@ -1,0 +1,26 @@
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\Interop.MSXML2.dll
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.ResolveComReference.cache
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+c:\users\raul\documents\visual studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+C:\Users\raul\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbprojResolveAssemblyReference.cache
+C:\Users\raul\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.TimboxForm.resources
+C:\Users\raul\Documents\timbox-vb_VS15\bin\Debug\WindowsApplication1.exe.config
+C:\Users\raul\Documents\timbox-vb_VS15\bin\Debug\WindowsApplication1.exe
+C:\Users\raul\Documents\timbox-vb_VS15\bin\Debug\WindowsApplication1.pdb
+C:\Users\raul\Documents\timbox-vb_VS15\bin\Debug\WindowsApplication1.xml
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.vbprojResolveAssemblyReference.cache
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\Interop.MSXML2.dll
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.vbproj.ResolveComReference.cache
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.TimboxForm.resources
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.exe
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.xml
+C:\Users\raul\Documents\timbox-vb_VS15\obj\Debug\WindowsApplication1.pdb
