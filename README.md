@@ -27,6 +27,10 @@ Imports MSXML2
 Imports System.Security.Cryptography
 Imports System.Security.Cryptography.X509Certificates
 ```
-Se utiliza la libreria MSXML para poder formar las peticiones al servicio SOAP. Se [descarga]() y se hace la referencia en el proyecto.
-Para 
 
+Se debe tener la libreria MSXML instalada para poder hacer la peticion SOAP con este ejemplo:
+- [MSXML](https://www.microsoft.com/en-US/download/details.aspx?id=3988)
+
+
+Una vez instalada, se debe agregar a las referencias del proyecto
+![referencias](https://imgur.com/TrSRCIK.png)
