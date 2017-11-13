@@ -15,11 +15,12 @@ Para hacer el POST con el envelope construido, se usa la URL:
 En la clase cServicios.cls estan los ejemplos para construir la petión de timbrado asi como la de cancelación.
 
 ### Generacion de Sello
-Para generar el sello hay dos opciones: 1) Utilizar el archivo pfx(*.pfx) con su password o 2) Utilizar el certificado(*.cer) y la llave privada (*.key) en formato PEM. 
+Para generar el sello hay dos opciones: 1) Utilizar el archivo pfx(*.pfx) con su password o 2) Utilizar el certificado(*.cer) y la llave privada (*.key) en formato PEM. Se obtiene el mismo resultado ya que un pfx es la combinación del certificado y su llave privada.  
 
-Sin embargo termina haciendo los mismos procedimientos ya que un pfx es la combinacion del certificado y su llave privada. Entonces en este ejemplo se extrae la llave privada y el certificado para poder generar el sello. También es necesario incluir el XSLT del SAT para obtener transformar el XML a la cadena original.
+En este ejemplo se utiliza el pfx para poder generar el sello. También es necesario incluir el XSLT del SAT, ya que se utiliza para poder transformar el XML y obtener la cadena original.
 
 De la cadena original se obtiene el digest y luego se utiliza el digest y la llave privada para obtener el sello. Finalmente el sello es actualizado en el archivo XML para que pueda ser timbrado.
+
 Todo esto se realiza con librerias de encriptacion de .NET.
 Para el funcionamiento del ejemplo se deben importar varias librerias:
 ```
