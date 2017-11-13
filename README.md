@@ -28,7 +28,7 @@ Imports MSXML2
 Imports System.Security.Cryptography
 Imports System.Security.Cryptography.X509Certificates
 ```
-
+## Importante
 Se debe tener la libreria MSXML instalada para poder hacer la peticion SOAP con este ejemplo:
 - [MSXML](https://www.microsoft.com/en-US/download/details.aspx?id=3988)
 
